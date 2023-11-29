@@ -31,7 +31,6 @@ ID,Category,Name,Method,MethodArgument,RegistryPath,RegistryItem,ClassName,Names
 2.2.33,"User Rights Assignment","Increase scheduling priority",accesschk,SeIncreaseBasePriorityPrivilege,,,,,,"Window Manager\Window Manager Group;BUILTIN\Administrators","Window Manager\Window Manager Group;BUILTIN\Administrators",=,Medium
 2.2.34,"User Rights Assignment","Load and unload device drivers",accesschk,SeLoadDriverPrivilege,,,,,,BUILTIN\Administrators,BUILTIN\Administrators,=,Medium
 2.2.35,"User Rights Assignment","Lock pages in memory",accesschk,SeLockMemoryPrivilege,,,,,,,,=,Medium
-2.2.36,"User Rights Assignment","Log on as a batch job (DC)",accesschk,SeBatchLogonRight,,,,,,"BUILTIN\Performance Log Users;BUILTIN\Backup Operators;BUILTIN\Administrators",BUILTIN\Administrators,=,Medium
 2.2.37.1,"User Rights Assignment","Manage auditing and security log (DC)",accesschk,SeSecurityPrivilege,,,,,,BUILTIN\Administrators,BUILTIN\Administrators,=,Medium
 2.2.37.2,"User Rights Assignment","Manage auditing and security log (DC and Exchange)",accesschk,SeSecurityPrivilege,,,,,,BUILTIN\Administrators,"NT AUTHORITY\EXCHANGE SERVERS;BUILTIN\Administrators",=,Medium
 2.2.38,"User Rights Assignment","Manage auditing and security log (Member)",accesschk,SeSecurityPrivilege,,,,,,BUILTIN\Administrators,BUILTIN\Administrators,=,Medium
@@ -70,7 +69,6 @@ ID,Category,Name,Method,MethodArgument,RegistryPath,RegistryItem,ClassName,Names
 2.3.7.3,"Security Options","Interactive logon: Machine inactivity limit",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,InactivityTimeoutSecs,,,,900,900,<=!0,Medium
 2.3.7.4,"Security Options","Interactive logon: Message text for users attempting to log on",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,LegalNoticeText,,,,,,!=,Low
 2.3.7.5,"Security Options","Interactive logon: Message title for users attempting to log on",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,LegalNoticeCaption,,,,,,!=,Low
-2.3.7.6,"Security Options","Interactive logon: Number of previous logons to cache (in case domain controller is not available)",Registry,,"HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon",CachedLogonsCount,,,,10,4,<=,Medium
 2.3.7.7.1,"Security Options","Interactive logon: Prompt user to change password before expiration (Max)",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,PasswordExpiryWarning,,,,5,14,<=,Low
 2.3.7.7.2,"Security Options","Interactive logon: Prompt user to change password before expiration (Min)",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,PasswordExpiryWarning,,,,5,5,>=,Low
 2.3.7.8,"Security Options","Interactive logon: Require Domain Controller Authentication to unlock workstation (Member)",Registry,,"HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon",ForceUnlockLogon,,,,0,1,=,Medium
@@ -86,10 +84,6 @@ ID,Category,Name,Method,MethodArgument,RegistryPath,RegistryItem,ClassName,Names
 2.3.17.6,"Security Options","User Account Control: Run all administrators in Admin Approval Mode",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,EnableLUA,,,,1,1,=,Medium
 2.3.17.7,"Security Options","User Account Control: Switch to the secure desktop when prompting for elevation",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,PromptOnSecureDesktop,,,,1,1,=,Medium
 2.3.17.8,"Security Options","User Account Control: Virtualize file and registry write failures to per-user locations",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,EnableVirtualization,,,,1,1,=,Medium
-5.1.1,"System Services","Print Spooler (Spooler) (DC only) ",Registry,,HKLM:\SYSTEM\CurrentControlSet\Services\Spooler,Start,,,,2,4,=,Medium
-5.1.2,"System Services","Print Spooler (Spooler) (Service Startup type) (DC only) ",service,Spooler,,,,,,Automatic,Disabled,=,Medium
-5.2.1,"System Services","Print Spooler (Spooler) (MS only)",Registry,,HKLM:\SYSTEM\CurrentControlSet\Services\Spooler,Start,,,,2,4,=,Medium
-5.2.2,"System Services","Print Spooler (Spooler) (Service Startup type) (MS only)",service,Spooler,,,,,,Automatic,Disabled,=,Medium
 9.1.1,"Windows Firewall","EnableFirewall (Domain Profile, Policy)",Registry,,HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile,EnableFirewall,,,,0,1,=,Medium
 9.1.2,"Windows Firewall","Inbound Connections (Domain Profile, Policy)",Registry,,HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile,DefaultInboundAction,,,,1,1,=,Medium
 9.1.3,"Windows Firewall","Outbound Connections (Domain Profile, Policy)",Registry,,HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile,DefaultOutboundAction,,,,0,0,=,Medium
@@ -153,7 +147,6 @@ ID,Category,Name,Method,MethodArgument,RegistryPath,RegistryItem,ClassName,Names
 18.1.1.1,"Administrative Templates: Control Panel","Personalization: Prevent enabling lock screen camera",Registry,,HKLM:\Software\Policies\Microsoft\Windows\Personalization,NoLockScreenCamera,,,,0,1,=,Low
 18.1.1.2,"Administrative Templates: Control Panel","Personalization: Prevent enabling lock screen slide show",Registry,,HKLM:\Software\Policies\Microsoft\Windows\Personalization,NoLockScreenSlideshow,,,,0,1,=,Low
 18.1.2.2,"Administrative Templates: Control Panel","Regional and Language Options: Allow users to enable online speech recognition services",Registry,,HKLM:\SOFTWARE\Policies\Microsoft\InputPersonalization,AllowInputPersonalization,,,,1,0,=,Medium
-18.1.3,"Administrative Templates: Control Panel","Allow Online Tips",Registry,,HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer,AllowOnlineTips,,,,1,0,=,Medium
 18.2.1,"Administrative Templates: LAPS","LAPS AdmPwd GPO Extension / CSE (Member)",Registry,,"HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\{D76B9641-3288-4f75-942D-087DE603E3EA}",DllName,,,,,"C:\Program Files\LAPS\CSE\AdmPwd.dll",=,Medium
 18.2.2,"Administrative Templates: LAPS","Do not allow password expiration time longer than required by policy (Member)",Registry,,"HKLM:\SOFTWARE\Policies\Microsoft Services\AdmPwd",PwdExpirationProtectionEnabled,,,,0,1,=,Medium
 18.2.3,"Administrative Templates: LAPS","Enable local admin password management (Member)",Registry,,"HKLM:\Software\Policies\Microsoft Services\AdmPwd",AdmPwdEnabled,,,,0,1,=,Medium
